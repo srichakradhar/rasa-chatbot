@@ -1,0 +1,134 @@
+body{
+    /*background-image: url(../Nokia_chatbot/internal-page_1366x768.png);*/
+    background-image: url(../tcs_chatbot/02.jpg);    
+    background-size: cover;
+    /*background-position: center top;*/
+    
+}
+
+.wc-header{
+	    /*background: linear-gradient(-141deg, #05bfcb 0%, #04b3d6 51%, #029aea 75%);*/
+        background: linear-gradient(-141deg, #5287c5 0%, #5287c5 51%, #5287c5 75%);
+        /*background: linear-gradient(-141deg, rgba(25, 73, 147, 1) 0%, rgba(25, 73, 147, 1) 51%, rgba(25, 73, 147, 1) 75%);*/        
+		height: 40px;
+        padding-top: 4%;
+        padding-bottom: 0%;
+}
+.wc-chatview-panel{
+  /*border-radius: 12px !important;*/
+    width: 39%;
+    height: 73%;
+    background: white;
+    border: 1px solid grey;
+    margin-left: 60%;
+    margin-top: 11%;
+}
+.showDiv{
+    display:none;
+}
+.wc-message-from-bot {
+    float: left;
+    margin-left: 58px;
+}
+
+#buttonClick {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border: none;
+    margin: 4px 2px;
+    border-radius: 50%;
+    color: rgba(0, 201, 255, 1);
+    background: #444;
+    border: solid rgba(0, 201, 255, 1);
+    padding: 40px;
+    display: block;
+    cursor: pointer;
+    box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.6), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.minimizeOpt{
+    margin-left: 92%;
+    margin-top: -10%;
+    cursor: pointer;
+}
+
+.minimizeOpt img{
+    width: 30px;
+    margin: 17px 0;
+}
+
+.wc-message-groups{
+    margin-top: -4%;
+  /*background: lightgrey;*/
+  background: white;
+}
+.wc-console{
+    border: 1px solid lightgrey;
+    /*background: #dbdee1;*/
+    background: #f2f2f2;
+}
+.wc-console svg {
+    fill: rgba(0, 201, 255, 1);
+    margin: 15px;
+}
+
+.wc-console.has-text .wc-send svg {
+    fill: #000;
+}
+
+.wc-message-content{
+    border-radius: 10px;
+}
+
+.wc-message-from-bot svg.wc-message-callout path {
+    fill: #eceff1;
+}
+svg.wc-message-callout{
+        fill: #eceff1;
+
+}
+.wc-message-from-me .wc-message-content{
+        /*background-color: #0078D7;*/
+        background-color: #2576e8;
+    color: #ffffff;
+}
+.wc-card button{
+    border-radius: 10px;
+}
+.wc-message-from-me svg.wc-message-callout path{
+    fill: #0078D7;
+}
+.headingChat{
+    margin-left: 5%;
+    font-size: 20px;
+}
+.wc-message-groups{
+    top: 75px !important;
+}
+div.wc-message-from.wc-message-from-me span:after{
+    float:left;
+    clear: none;
+    /*content:url(../img/user-icon_35.png);*/
+    content:url(../tcs_chatbot/user.png);
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    right: 15px;
+    border-color:#0078D7;
+}
+div.wc-message-from.wc-message-from-bot span:before{
+    float:left;
+    clear: none;
+    /*content:url(../img/answer-icon50x50.png);*/
+    content:url(../tcs_chatbot/botimage.png);    
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    /*background: linear-gradient(-141deg, rgba(25, 73, 147, 1) 0%, rgba(25, 73, 147, 1) 51%, rgba(25, 73, 147, 1) 75%);*/
+}
+.wc-message-from-me {
+    float: right;
+    margin-right: 35px;
+}

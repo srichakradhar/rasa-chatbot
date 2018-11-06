@@ -1,0 +1,957 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "intent": "Cancel",
+        "text": "abort"
+      },
+      {
+        "intent": "Thank You",
+        "text": "adios"
+      },
+      {
+        "intent": "social network",
+        "text": "any chatting application for internal communications?"
+      },
+      {
+        "intent": "social network",
+        "text": "any social network for internal communication available?"
+      },
+      {
+        "intent": "VMV",
+        "text": "applied materials vision?"
+      },
+      {
+        "intent": "thank you note",
+        "text": "appreciate"
+      },
+      {
+        "intent": "internal posting",
+        "text": "are there any open positions?"
+      },
+      {
+        "intent": "Thank You",
+        "text": "bye"
+      },
+      {
+        "intent": "Leave Encashment",
+        "entities": [
+          {
+            "entity": "leave type",
+            "start": 13,
+            "end": 19,
+            "value": "earned"
+          }
+        ],
+        "text": "can i encash earned leaves?"
+      },
+      {
+        "intent": "Leave Encashment",
+        "text": "can i encash leaves?"
+      },
+      {
+        "intent": "Business Cards",
+        "text": "can i order business cards?"
+      },
+      {
+        "intent": "shuttle service",
+        "text": "can i use shuttle services and may i know the timings?"
+      },
+      {
+        "intent": "Leave Encashment",
+        "text": "can my leaves be encashed?"
+      },
+      {
+        "intent": "internal posting",
+        "text": "can you get me information on job requirements"
+      },
+      {
+        "intent": "Templates",
+        "text": "can you get me the company templates"
+      },
+      {
+        "intent": "Workday",
+        "text": "can you get me the work day link?"
+      },
+      {
+        "intent": "VMV",
+        "text": "can you provide the link to view the values,mission,vision of amat?"
+      },
+      {
+        "intent": "VMV",
+        "text": "can you provide the link to view the values,mission,vision of applied materials?"
+      },
+      {
+        "intent": "Cancel",
+        "text": "cancel"
+      },
+      {
+        "intent": "Cancel",
+        "text": "disregard"
+      },
+      {
+        "intent": "Cancel",
+        "text": "do not do it"
+      },
+      {
+        "intent": "Cancel",
+        "text": "do not do that"
+      },
+      {
+        "intent": "commuter",
+        "text": "do we have facility for transportation?"
+      },
+      {
+        "intent": "map",
+        "text": "do you have the campus map?"
+      },
+      {
+        "intent": "map",
+        "text": "do you have the office map?"
+      },
+      {
+        "intent": "Cancel",
+        "text": "don't"
+      },
+      {
+        "intent": "Cancel",
+        "text": "don't do it"
+      },
+      {
+        "intent": "Cancel",
+        "text": "don't do that"
+      },
+      {
+        "intent": "Employee referral",
+        "text": "employee referral"
+      },
+      {
+        "intent": "calendar",
+        "text": "financial year calendar please"
+      },
+      {
+        "intent": "acronym",
+        "text": "give me the source for learning"
+      },
+      {
+        "intent": "Workday",
+        "text": "give me the workday link"
+      },
+      {
+        "intent": "GIS",
+        "text": "global information system details"
+      },
+      {
+        "intent": "Greeting",
+        "text": "good afternoon"
+      },
+      {
+        "intent": "Greeting",
+        "text": "good evening"
+      },
+      {
+        "intent": "Greeting",
+        "text": "good morning"
+      },
+      {
+        "intent": "Greeting",
+        "text": "good night"
+      },
+      {
+        "intent": "Greeting",
+        "text": "hello"
+      },
+      {
+        "intent": "Greeting",
+        "text": "hello bot"
+      },
+      {
+        "intent": "Help",
+        "text": "help"
+      },
+      {
+        "intent": "Help",
+        "text": "help me"
+      },
+      {
+        "intent": "Help",
+        "text": "help me please"
+      },
+      {
+        "intent": "Help",
+        "text": "help please"
+      },
+      {
+        "intent": "Greeting",
+        "text": "hey"
+      },
+      {
+        "intent": "Greeting",
+        "text": "hi"
+      },
+      {
+        "intent": "Greeting",
+        "text": "hi bot"
+      },
+      {
+        "intent": "Greeting",
+        "text": "hiya"
+      },
+      {
+        "intent": "Greeting",
+        "text": "how are you"
+      },
+      {
+        "intent": "Greeting",
+        "text": "how are you doing today?"
+      },
+      {
+        "intent": "Greeting",
+        "text": "how are you doing?"
+      },
+      {
+        "intent": "Greeting",
+        "text": "how are you today?"
+      },
+      {
+        "intent": "calendar",
+        "text": "how can i access a fiscal year calendar?"
+      },
+      {
+        "intent": "Workday",
+        "text": "how can i access workday?"
+      },
+      {
+        "intent": "Business Cards",
+        "text": "how can i avail calling cards?"
+      },
+      {
+        "intent": "AMP Wellness Center",
+        "text": "how can i get access to the amp wellness center?"
+      },
+      {
+        "intent": "acronym",
+        "text": "how can i learn applied's language or find the meaning of a company acronym?"
+      },
+      {
+        "intent": "conference",
+        "text": "how can i locate a conference room/office/person?"
+      },
+      {
+        "intent": "Employee referral",
+        "text": "how can i refer my friend?"
+      },
+      {
+        "intent": "Leave of absence",
+        "text": "how can i request a leave of absence (loa)?"
+      },
+      {
+        "intent": "VoE",
+        "text": "how can i request a verification of employment (voe) letter?"
+      },
+      {
+        "intent": "thank you note",
+        "text": "how can i send a thank you note to a coworker?"
+      },
+      {
+        "intent": "internal posting",
+        "text": "how can i view internal job postings?"
+      },
+      {
+        "intent": "elections",
+        "text": "how can i view my benefits elections?"
+      },
+      {
+        "intent": "assignments",
+        "text": "how can i view my training assignments?"
+      },
+      {
+        "intent": "personal information",
+        "text": "how can i view/update my personal information(pii) in workday?"
+      },
+      {
+        "intent": "time card",
+        "text": "how do i access my time card and why do i need one?"
+      },
+      {
+        "intent": "AMEX",
+        "text": "how do i request a corporate amex card?"
+      },
+      {
+        "intent": "PTO",
+        "text": "how do i request pto?"
+      },
+      {
+        "intent": "facilities request",
+        "text": "how do i submit a facilities request?"
+      },
+      {
+        "intent": "Employee referral",
+        "text": "how does the employee referral program work?"
+      },
+      {
+        "intent": "shuttle service",
+        "text": "how does the shuttle service work (getting between campuses)?"
+      },
+      {
+        "intent": "Tuition Assistance Program",
+        "text": "how does the tuition assistance program (tap) work?"
+      },
+      {
+        "intent": "Number of leaves",
+        "entities": [
+          {
+            "entity": "leave type",
+            "start": 17,
+            "end": 25,
+            "value": "adoption"
+          }
+        ],
+        "text": "how many days of adoption leave can i take?"
+      },
+      {
+        "intent": "Number of leaves",
+        "entities": [
+          {
+            "entity": "leave type",
+            "start": 17,
+            "end": 26,
+            "value": "maternity"
+          }
+        ],
+        "text": "how many days of maternity leave can i take?"
+      },
+      {
+        "intent": "Number of leaves",
+        "entities": [
+          {
+            "entity": "leave type",
+            "start": 17,
+            "end": 26,
+            "value": "paternity"
+          }
+        ],
+        "text": "how many days of paternity leave can i take?"
+      },
+      {
+        "intent": "Number of leaves",
+        "entities": [
+          {
+            "entity": "leave type",
+            "start": 9,
+            "end": 15,
+            "value": "earned"
+          },
+          {
+            "entity": "duration",
+            "start": 38,
+            "end": 43,
+            "value": "month"
+          }
+        ],
+        "text": "how many earned leaves can i take per month?"
+      },
+      {
+        "intent": "Number of leaves",
+        "entities": [
+          {
+            "entity": "leave type",
+            "start": 9,
+            "end": 15,
+            "value": "earned"
+          },
+          {
+            "entity": "duration",
+            "start": 38,
+            "end": 45,
+            "value": "quarter"
+          }
+        ],
+        "text": "how many earned leaves can i take per quarter?"
+      },
+      {
+        "intent": "Number of leaves",
+        "entities": [
+          {
+            "entity": "leave type",
+            "start": 9,
+            "end": 15,
+            "value": "earned"
+          },
+          {
+            "entity": "duration",
+            "start": 38,
+            "end": 42,
+            "value": "year"
+          }
+        ],
+        "text": "how many earned leaves can i take per year?"
+      },
+      {
+        "intent": "Number of leaves",
+        "entities": [
+          {
+            "entity": "leave type",
+            "start": 9,
+            "end": 13,
+            "value": "sick"
+          },
+          {
+            "entity": "duration",
+            "start": 36,
+            "end": 41,
+            "value": "month"
+          }
+        ],
+        "text": "how many sick leaves can i take per month?"
+      },
+      {
+        "intent": "Number of leaves",
+        "entities": [
+          {
+            "entity": "leave type",
+            "start": 9,
+            "end": 13,
+            "value": "sick"
+          },
+          {
+            "entity": "duration",
+            "start": 36,
+            "end": 43,
+            "value": "quarter"
+          }
+        ],
+        "text": "how many sick leaves can i take per quarter?"
+      },
+      {
+        "intent": "Number of leaves",
+        "entities": [
+          {
+            "entity": "leave type",
+            "start": 9,
+            "end": 13,
+            "value": "sick"
+          },
+          {
+            "entity": "duration",
+            "start": 36,
+            "end": 40,
+            "value": "year"
+          }
+        ],
+        "text": "how many sick leaves can i take per year?"
+      },
+      {
+        "intent": "Variable Pay",
+        "text": "how much variable pay will i get this quarter?"
+      },
+      {
+        "intent": "Tuition Assistance Program",
+        "text": "how tap works?"
+      },
+      {
+        "intent": "conference",
+        "text": "how to arrange a conference"
+      },
+      {
+        "intent": "shuttle service",
+        "text": "how to avail shuttle services?"
+      },
+      {
+        "intent": "Business Cards",
+        "text": "how to order visiting cards?"
+      },
+      {
+        "intent": "Leave of absence",
+        "text": "how to request for leave"
+      },
+      {
+        "intent": "Greeting",
+        "text": "howdy!"
+      },
+      {
+        "intent": "HR Policies",
+        "text": "hr policy to know the details about recruitment?"
+      },
+      {
+        "intent": "Help",
+        "text": "i am stuck"
+      },
+      {
+        "intent": "Benefits",
+        "text": "i have an issue with benefits"
+      },
+      {
+        "intent": "Templates",
+        "text": "i need company templates"
+      },
+      {
+        "intent": "AMEX",
+        "text": "i need corporate amex card. may i know the process to apply for it?"
+      },
+      {
+        "intent": "internal posting",
+        "text": "i need info on job openings"
+      },
+      {
+        "intent": "internal posting",
+        "text": "i need job openings"
+      },
+      {
+        "intent": "VoE",
+        "text": "i need my voe"
+      },
+      {
+        "intent": "AMP Wellness Center",
+        "text": "i need to go to fitness center"
+      },
+      {
+        "intent": "thank you note",
+        "text": "i need to recognize someone today"
+      },
+      {
+        "intent": "thank you note",
+        "text": "i want to appreciate a co worker"
+      },
+      {
+        "intent": "personal information",
+        "text": "i want to update my personal information"
+      },
+      {
+        "intent": "Cancel",
+        "text": "i would like to cancel"
+      },
+      {
+        "intent": "Help",
+        "text": "i'm stuck"
+      },
+      {
+        "intent": "shuttle service",
+        "text": "internal transportation service between different campuses?"
+      },
+      {
+        "intent": "commuter",
+        "text": "is there a commuter program?"
+      },
+      {
+        "intent": "social network",
+        "text": "is there an internal social network?"
+      },
+      {
+        "intent": "elections",
+        "text": "link to the benefit elections in mercer portal"
+      },
+      {
+        "intent": "VMV",
+        "text": "mission of applied materials?"
+      },
+      {
+        "intent": "commuter",
+        "text": "mode of transport"
+      },
+      {
+        "intent": "time card",
+        "text": "my time card"
+      },
+      {
+        "intent": "time card",
+        "text": "my timecard"
+      },
+      {
+        "intent": "None",
+        "text": "my water bottle is green."
+      },
+      {
+        "intent": "Cancel",
+        "text": "never mind"
+      },
+      {
+        "intent": "Cancel",
+        "text": "please cancel"
+      },
+      {
+        "intent": "Cancel",
+        "text": "please disregard"
+      },
+      {
+        "intent": "Help",
+        "text": "please help me"
+      },
+      {
+        "intent": "Cancel",
+        "text": "please stop"
+      },
+      {
+        "intent": "Templates",
+        "text": "power point presentation templates"
+      },
+      {
+        "intent": "Templates",
+        "text": "power point templates"
+      },
+      {
+        "intent": "Templates",
+        "text": "powerpoint presentations"
+      },
+      {
+        "intent": "Templates",
+        "text": "powerpoint templates"
+      },
+      {
+        "intent": "Leave of absence",
+        "text": "process for obtaining ooo?"
+      },
+      {
+        "intent": "thank you note",
+        "text": "recognize"
+      },
+      {
+        "intent": "shuttle service",
+        "text": "shuttle services details?"
+      },
+      {
+        "intent": "Cancel",
+        "text": "stop"
+      },
+      {
+        "intent": "Thank You",
+        "text": "thank you"
+      },
+      {
+        "intent": "thank you note",
+        "text": "thank you note"
+      },
+      {
+        "intent": "Thank You",
+        "text": "thanks"
+      },
+      {
+        "intent": "Thank You",
+        "text": "thanks for the information"
+      },
+      {
+        "intent": "None",
+        "text": "there is a large deep dish pizza in your future."
+      },
+      {
+        "intent": "VMV",
+        "text": "values of amat?"
+      },
+      {
+        "intent": "VoE",
+        "text": "verification of employment letter"
+      },
+      {
+        "intent": "PTO",
+        "text": "way to request pto?"
+      },
+      {
+        "intent": "VMV",
+        "text": "what are the applied vision, mission and values (vmv)?"
+      },
+      {
+        "intent": "HR Policies",
+        "text": "what are the hr policies for recruitment?"
+      },
+      {
+        "intent": "VMV",
+        "text": "what are the values of applied materials?"
+      },
+      {
+        "intent": "VMV",
+        "text": "what are the values, mission and vision of applied materials ?"
+      },
+      {
+        "intent": "Help",
+        "text": "what can i say"
+      },
+      {
+        "intent": "Help",
+        "text": "what can you do"
+      },
+      {
+        "intent": "Help",
+        "text": "what can you help me with"
+      },
+      {
+        "intent": "Help",
+        "text": "what do i do now?"
+      },
+      {
+        "intent": "Help",
+        "text": "what do i do?"
+      },
+      {
+        "intent": "elections",
+        "text": "what is the benefit elections path?"
+      },
+      {
+        "intent": "Employee Appraisal",
+        "text": "what is the eligibility criteria for appraisal as a lateral?"
+      },
+      {
+        "intent": "VMV",
+        "text": "what is the mission of amat?"
+      },
+      {
+        "intent": "VMV",
+        "text": "what is the mission of applied materials?"
+      },
+      {
+        "intent": "Variable Pay",
+        "text": "what is the percentage of variable pay in the salary for this quarter?"
+      },
+      {
+        "intent": "HIS Plan",
+        "entities": [
+          {
+            "entity": "plan type",
+            "start": 31,
+            "end": 37,
+            "value": "bronze"
+          }
+        ],
+        "text": "what is the premium amount for bronze plan?"
+      },
+      {
+        "intent": "HIS Plan",
+        "entities": [
+          {
+            "entity": "plan type",
+            "start": 31,
+            "end": 35,
+            "value": "gold"
+          }
+        ],
+        "text": "what is the premium amount for gold plan?"
+      },
+      {
+        "intent": "HIS Plan",
+        "entities": [
+          {
+            "entity": "plan type",
+            "start": 31,
+            "end": 40,
+            "value": "gold plus"
+          }
+        ],
+        "text": "what is the premium amount for gold plus plan?"
+      },
+      {
+        "intent": "HIS Plan",
+        "entities": [
+          {
+            "entity": "plan type",
+            "start": 31,
+            "end": 39,
+            "value": "platinum"
+          }
+        ],
+        "text": "what is the premium amount for platinum plan?"
+      },
+      {
+        "intent": "HIS Plan",
+        "entities": [
+          {
+            "entity": "plan type",
+            "start": 31,
+            "end": 44,
+            "value": "platinum plus"
+          }
+        ],
+        "text": "what is the premium amount for platinum plus plan?"
+      },
+      {
+        "intent": "HIS Plan",
+        "entities": [
+          {
+            "entity": "plan type",
+            "start": 31,
+            "end": 37,
+            "value": "silver"
+          }
+        ],
+        "text": "what is the premium amount for silver plan?"
+      },
+      {
+        "intent": "time card",
+        "text": "what is the process to access timecard?"
+      },
+      {
+        "intent": "facilities request",
+        "text": "what is the process to utilize the facilities?"
+      },
+      {
+        "intent": "VMV",
+        "text": "what is the vision of amat?"
+      },
+      {
+        "intent": "VMV",
+        "text": "what is the vision of applied materials?"
+      },
+      {
+        "intent": "shuttle service",
+        "text": "what is the way to move between campuses?"
+      },
+      {
+        "intent": "Leave Encashment",
+        "entities": [
+          {
+            "entity": "leaves",
+            "start": 5,
+            "end": 9,
+            "value": "kind"
+          }
+        ],
+        "text": "what kind of leaves can be encashed?"
+      },
+      {
+        "intent": "Variable Pay",
+        "text": "what percentage of variable pay will i get?"
+      },
+      {
+        "intent": "Employee Appraisal",
+        "text": "what should be the criterion for appraisal?"
+      },
+      {
+        "intent": "conference",
+        "text": "what should i do to connect to a meeting"
+      },
+      {
+        "intent": "payday",
+        "text": "when do i get paid?"
+      },
+      {
+        "intent": "Leave Encashment",
+        "entities": [
+          {
+            "entity": "leave type",
+            "start": 10,
+            "end": 16,
+            "value": "earned"
+          }
+        ],
+        "text": "when does earned leaves get encashed?"
+      },
+      {
+        "intent": "Leave Encashment",
+        "entities": [
+          {
+            "entity": "leave type",
+            "start": 10,
+            "end": 14,
+            "value": "sick"
+          }
+        ],
+        "text": "when does sick leaves get encashed?"
+      },
+      {
+        "intent": "payday",
+        "text": "when is my pay day?"
+      },
+      {
+        "intent": "Employee Appraisal",
+        "text": "when will i be eligible for appraisal as a fresher?"
+      },
+      {
+        "intent": "Employee Appraisal",
+        "text": "when will i be eligible for appraisal as an experienced professional?"
+      },
+      {
+        "intent": "payday",
+        "text": "when will i get my salary?"
+      },
+      {
+        "intent": "assignments",
+        "text": "where are my assignments?"
+      },
+      {
+        "intent": "map",
+        "text": "where can i find a campus map?"
+      },
+      {
+        "intent": "HR Policies",
+        "text": "where can i find company hr policies?"
+      },
+      {
+        "intent": "acronym",
+        "text": "where can i find company's terminology list"
+      },
+      {
+        "intent": "Templates",
+        "text": "where can i find templates for documents and powerpoint presentations?"
+      },
+      {
+        "intent": "acronym",
+        "text": "where can i get the acronyms list?"
+      },
+      {
+        "intent": "VMV",
+        "text": "where can i get the values of amat"
+      },
+      {
+        "intent": "AMP Wellness Center",
+        "text": "where can i submit the fitness application scla?"
+      },
+      {
+        "intent": "map",
+        "text": "where to get the map of the campus?"
+      },
+      {
+        "intent": "Leave Encashment",
+        "entities": [
+          {
+            "entity": "leaves",
+            "start": 6,
+            "end": 11,
+            "value": "types"
+          }
+        ],
+        "text": "which types leaves can be encashed?"
+      },
+      {
+        "intent": "GIS",
+        "text": "who can i contact for gis related issues or questions?"
+      },
+      {
+        "intent": "Assistance",
+        "text": "who can i contact for immediate hr assistance/help?"
+      },
+      {
+        "intent": "Benefits",
+        "text": "who do i contact if i have a benefits related question or issue?"
+      },
+      {
+        "intent": "Benefits",
+        "text": "whom to approach for a problem with benefits"
+      },
+      {
+        "intent": "Assistance",
+        "text": "whom to be approached for hr emergency?"
+      },
+      {
+        "intent": "Assistance",
+        "text": "whom we can contact for instant hr help?"
+      },
+      {
+        "intent": "Help",
+        "text": "why doesn't this work ?"
+      },
+      {
+        "intent": "Employee Appraisal",
+        "text": "will i be eligible for appraisal as an ep?"
+      },
+      {
+        "intent": "Assistance",
+        "text": "with whom can we be in touch for instant hr help?"
+      },
+      {
+        "intent": "Tuition Assistance Program",
+        "text": "working of tap?"
+      }
+    ],
+    "regex_features": [],
+    "lookup_tables": [],
+    "entity_synonyms": []
+  }
+}

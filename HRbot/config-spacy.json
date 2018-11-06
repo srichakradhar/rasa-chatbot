@@ -1,0 +1,6 @@
+{
+  "pipeline": "tensorflow_embedding",
+  //"path" : "/home/chatBot/restaurantbot/projects",
+  //"data": "/home/chatBot/restaurantbot/demo-rasa.json",
+  "port": 5000
+}

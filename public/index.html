@@ -1,0 +1,198 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>HR ChatBot</title>
+    <link rel="stylesheet" type="text/css" href="chat.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="loaders.min.css">
+    <link rel="stylesheet" href="switchery.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="chat.js"></script>
+    <script src="moment.min.js"></script>
+    <script src="switchery.min.js"></script>
+
+    <nav class="navbar nokiamain1">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">  <img src="../tcs_chatbot/tcs_logo.png" alt="nokia" style=" margin-left:3%;margin-top:2%;" /></a>
+            </div>
+            <ul class="nav">
+                <li style="display:inline;width:20%;margin-top:0%"><button class="btn  btn-sm lgoutimg " onclick="signOut()"><img src="../tcs_chatbot/logout.png" style="border-color: transparent; background-color: transparent;" /></button></li>
+            </ul>
+        </div>
+    </nav>
+
+     <div class="btn btn-raised show" id="buttonClick">
+            <div id="chat-overlay"></div>
+            <img src="./img/chatbot_108x108.png" style="
+            position: absolute;
+            top: -17%;
+            left: -15%;
+            ">  
+            <img src="./img/ChatButton.png" style="
+              position: absolute;
+              top: 20%;
+              left: 17%;
+              width: 65%;
+            ">
+        </div>
+
+
+    <div class="cssload-loader"></div>
+    <div id="BotChatGoesHere" class="wc-narrow"></div>
+
+    <div class="chat_window">
+        <!--<div class="top_menu">
+            <div class="title" style="border-bottom:0.5px solid black;width:470px">
+                <img style="margin-bottom:4px" src="./tcs_chatbot/bot.png"> Hiro Bot
+            </div>
+            <div class="v1"></div>
+            <div class="minimizeOpt">
+
+                <a>
+                    <span class="glyphicon glyphicon-remove" style="left:93%;top:-10px;font-size:25px "></span>
+                </a>
+            </div>
+        </div>-->
+
+        <div class="top_menu" style="border-bottom:0.5px solid white;width:600px;background-color: cornflowerblue">
+            <div class="toggle" style="display:none">
+                <label class="toggle-wrapper">
+                    Theme
+                    <input type="checkbox" class="js-theme-switch" checked />
+                </label>
+            </div>
+            <div class="title" style="margin-top:-8px;margin-left:-12px" ><img style="margin-bottom:4px" src="./tcs_chatbot/bot.png"> Hiro Bot</div>
+            <div class="toggle">
+                <label class="toggle-wrapper" id="help-toggle" style="display:none;">
+                    <!--feedback-->
+                    <input type="checkbox" class="js-help-switch" checked />
+
+                </label>
+                <div class="toggle-tooltip" style="display:none;">
+                    You can help!
+                    <div class="close" data-dynamite-selected="true">x</div>
+                </div>
+            </div>
+
+            <div class="v1"></div>
+            <div class="minimizeOpt">
+
+                <a>
+                    <span class="glyphicon glyphicon-remove" style="left:93%;top:15px;margin-left:4px;font-size:30px;color:white "></span>
+                </a>
+            </div>
+        </div>
+
+        <ul class="messages scrollbar-custom theme1"></ul>
+
+
+
+        <div class="toggle">
+            <label class="toggle-wrapper" id="help-toggle" style="display:none">
+                Help with the development
+                <input type="checkbox" class="js-help-switch" checked />
+
+            </label>
+            <div class="toggle-tooltip" style="display:none">
+                You can help!
+                <div class="close" data-dynamite-selected="true">x</div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="bottom_wrapper clearfix">
+            <label tabindex="0" class="wc-upload" for="wc-upload-input">
+                <img src="./tcs_chatbot/strip.png" style="margin-left:10px;" />
+            </label>
+            <input tabindex="-1" id="wc-upload-input" role="button" aria-label="Upload file" type="file" multiple="" style="margin-right:15px;">
+
+            <div class="message_input_wrapper">
+
+                <input class="message_input" aria-live="polite" aria-label="Type your message..." type="text" placeholder="Type Your Request Here..." value="" style="margin-left:24px;">
+            </div>
+            <button tabindex="0" class="wc-send" role="button" aria-label="Send" type="button">
+                <img src="./tcs_chatbot/send.png" style="margin-left:10px;" />
+            </button>
+
+            <button tabindex="0" class="wc-mic hidden inactive" role="button" aria-label="Speak" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58 58" width="28" height="22">
+                    <path d="M 44 28 C 43.448 28 43 28.447 43 29 L 43 35 C 43 42.72 36.72 49 29 49 C 21.28 49 15 42.72 15 35 L 15 29 C 15 28.447 14.552 28 14 28 C 13.448 28 13 28.447 13 29 L 13 35 C 13 43.485 19.644 50.429 28 50.949 L 28 56 L 23 56 C 22.448 56 22 56.447 22 57 C 22 57.553 22.448 58 23 58 L 35 58 C 35.552 58 36 57.553 36 57 C 36 56.447 35.552 56 35 56 L 30 56 L 30 50.949 C 38.356 50.429 45 43.484 45 35 L 45 29 C 45 28.447 44.552 28 44 28 Z"></path>
+                    <path id="micFilling" d="M 28.97 44.438 L 28.97 44.438 C 23.773 44.438 19.521 40.033 19.521 34.649 L 19.521 11.156 C 19.521 5.772 23.773 1.368 28.97 1.368 L 28.97 1.368 C 34.166 1.368 38.418 5.772 38.418 11.156 L 38.418 34.649 C 38.418 40.033 34.166 44.438 28.97 44.438 Z"></path>
+                    <path d="M 29 46 C 35.065 46 40 41.065 40 35 L 40 11 C 40 4.935 35.065 0 29 0 C 22.935 0 18 4.935 18 11 L 18 35 C 18 41.065 22.935 46 29 46 Z M 20 11 C 20 6.037 24.038 2 29 2 C 33.962 2 38 6.037 38 11 L 38 35 C 38 39.963 33.962 44 29 44 C 24.038 44 20 39.963 20 35 L 20 11 Z"></path>
+                </svg>
+            </button>
+
+
+        </div>
+    </div>
+
+    <div class="message_template">
+
+        <div class="message">
+            <div class="text_wrapper feedback" id="wrapper" style="width:0px; opacity: 0;">
+                <div class="intent-info" style="">
+                    <form id="question">
+                        <p style="display:none;" >Feedback Question</p>
+                        <span class="intent" style="display:none;">intent name</span>
+                        <div class="feedback-btn-container">
+                            <!--<span class="feedback_yes btn green">✓</span>
+                             <span class="feedback_no btn red">X</span>-->
+                            <span class="feedback_yes btn green" title="👍" >👍</span>
+                            <span class="feedback_no btn red" title="👎">👎</span>
+
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            <div class="avatar"></div>
+            <div class="text_wrapper">
+                <div class="text"></div>
+                <div class="message-time"></div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div id="checkTemplate" style="display:none">
+        <div id="checkYes" style="display:none">
+            <svg class="checkmark positive" id="check-1" viewBox="0 0 52 52"><circle class="circle positive" cx="26" cy="26" r="25" fill="none"></circle><path class="check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"></path></svg>
+        </div>
+        <div id="checkNo" style="display:none">
+            <svg class="checkmark negative" id="check-1" viewBox="0 0 52 52"><circle class="circle negative" cx="26" cy="26" r="25" fill="none"></circle><path class="check" fill="none" d="M13 13 L38 38 M13 38 L38 13"></path></svg>
+        </div>
+    </div>
+
+    <div style="box-sizing:unset;margin-top: 300px;width: 481px; padding: 15px;height: 200px;border-radius: 18px;padding-left:50px; color:#0a73ca;font-size:18px;">
+        <p>
+            <span style="background: linear-gradient(to right, #7C13FF, #0E5DFF);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;font-family: Arial,light;font-size:55px;font-stretch:condensed">Welcome to Hiro</span>
+        </p>
+        <!--<li style="margin-left:10px">Lets train a new bot on FAQ’s in LUIS</li>-->
+        <!--<p><u><h3 style="margin-left:10px;margin-top:10px;">Lets train a new bot on FAQ’s in LUIS</h3></u></p>-->
+        <p style="margin-left:10px;margin-top:10px;color:#1c1c1c;font-size:14px">Lorem lpsum.Provin gravida nibh vel auctor aliquet.</p>
+        <p style="margin-left:10px;margin-top:10px;color:#1c1c1c;font-size:14px">Oin gravinda nibh velv. </p>
+
+    </div>
+
+
+</body>
+
+
+</html>

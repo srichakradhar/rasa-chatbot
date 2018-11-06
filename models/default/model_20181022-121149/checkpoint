@@ -1,0 +1,2 @@
+model_checkpoint_path: "C:\\Users\\ramad\\Downloads\\chatbot-node-rasa-master\\models/default\\model_20181022-121149\\intent_classifier_tensorflow_embedding.ckpt"
+all_model_checkpoint_paths: "C:\\Users\\ramad\\Downloads\\chatbot-node-rasa-master\\models/default\\model_20181022-121149\\intent_classifier_tensorflow_embedding.ckpt"

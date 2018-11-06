@@ -1,0 +1,57 @@
+                                            ==Release notes_NokiaPure Text==
+
+Compiler of release notes: Dalton Maag 
+Designer: Dalton Maag 
+Designer URL daltonmaag.com
+
+Date of creation: 2011-10-07
+
+Basic information 
+1 Basic Family name: Nokia Pure Text
+2 TrueType Version record: 1.21
+3 Regional package: European 
+4 Supported scripts : Latin, Greek, Cyrillic
+5 Number of glyphs: ~1165
+6 Weights/Styles: Light, Regular, Medium and Bold.  *Important*  The Medium weight is a copy of the Bold, 
+  renamed so that it's part of the Light family.  The Medium is the Bold of the Light.  
+7 Usage UI and Text
+
+
+Technology 
+1 Files formats: The file has been delivered in the TrueType-based OpenType format 
+2 Embedding settings: Everything is allowed
+3 File sizes: 279 - 300 KB
+4 Hinting information:  All the characters of the Regular, Light, Medium (see above) and Bold are manually hinted.
+5 Default numerals - tabular as default 
+
+Other information 
+1 Changes since previous release:  
+  - Addition of Tenge (U+20B8) and Riel (17DB)
+  - Fixed Vietnamese accent clashing issue, Nokia reference 275939.
+  - Incorrect accent corrected on U+1EB2 U+1EB3
+2 This version replaces replaces Nokia Pure Text_V1.20
+3 List supported languages
+
+Abkhaz, Afar, Afrikaans, Albanian, Aragonese, Avar, Aymara, Azerbaijani (Cyrillic Script), Bashkir, Basque, 
+Belarusian, Bislama, Bosnian (Cyrillic Script), Bosnian (Latin Script), Breton, Bulgarian, Catalan, Chamorro, 
+Chechen, Chuvash, Cornish, Corsican, Croatian, Czech, Danish, Dutch, English, Esperanto, Estonian, Faroese, 
+Fijian, Finnish, French, Galician, Ganda, German, Greek, Greenlandic, Haitian, Hungarian, Icelandic, Ido, 
+Indonesian, Interlingua, Interlingue, Irish, Italian, Javanese, Kazakh (Cyrillic Script), Kazakh (Latin Script), 
+Kikuyu, Kinyarwanda, Kirundi, Komi, Kongo, Kuanyama, Kurdish (Cyrillic Script), Kurdish (Latin Script), Kyrgyz, 
+Latin, Latvian, Limburgish, Lithuanian, Luxembourgish, Macedonian, Malagasy, Malay (Latin Script), Maltese, 
+Manx, Moldovan (Cyrillic Script), Moldovan (Latin Script), Mongolian (Cyrillic Script), Nauruan, Navajo, 
+Northern Sami, North Ndebele, Norwegian, Occitan, Old Church Slavonic, Oromo, Ossetic, Polish, Portuguese, 
+Quechua, Raeto-Romance, Romanian, Russian, Samoan, Sardinian, Scottish Gaelic, Serbian (Cyrillic Script), 
+Serbian (Latin Script), Shona, Slovak, Slovenian, Somali, Southern Sotho, South Ndebele, Spanish, Sundanese, 
+Swahili, Swati, Swedish, Tagalog (Latin Script), Tahitian, Tajik (Cyrillic Script), Tatar (Cyrillic Script), 
+Tatar (Latin Script), Tongan, Tsonga, Tswana, Turkish, Turkmen (Cyrillic Script), Turkmen (Latin Script), Twi, 
+Ukrainian, Uyghur (Cyrillic Script), Uyghur (Latin Script), Uzbek (Cyrillic Script), Uzbek (Latin Script), 
+Venda, Volapuk, Walloon, Welsh, Western Frisian, Wolof, Xhosa, Zulu.
+ 
+Please report any technical errors here  http://ln.dmcd.net/NokiaPureBugReport
+
+
+
+
+
+ 

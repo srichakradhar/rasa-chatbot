@@ -1,0 +1,109 @@
+html, body {
+    /*background: #efefef;      */
+    height:100%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#center-text {          
+display: flex;
+flex: 1;
+flex-direction:column; 
+justify-content: center;
+align-items: center;  
+height:100%;
+
+}
+
+.chat-launcher {
+position: fixed;
+bottom: 20px;
+right: 20px;
+width: 60px;
+height: 60px;
+z-index: 9999;
+background: orange;
+color: white;
+border-radius: 50%;
+cursor: pointer;
+box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06), 0 2px 32px rgba(0, 0, 0, 0.16);
+}
+.chat-launcher:before, .chat-launcher:after {
+font-family: FontAwesome;
+font-size: 34px;
+position: absolute;
+-webkit-transition: transform 180ms linear, opacity 130ms linear;
+transition: transform 180ms linear, opacity 130ms linear;
+}
+.chat-launcher:before {
+content: "\f086";
+margin: 13px;
+opacity: 1;
+-webkit-transform: rotate(0deg) scale(1);
+transform: rotate(0deg) scale(1);
+}
+.chat-launcher:after {
+content: "\f00d";
+margin: 13px 17px;
+opacity: 0;
+-webkit-transform: rotate(-30deg);
+transform: rotate(-30deg);
+}
+.chat-launcher:hover {
+background: #ffb329;
+}
+.chat-launcher.active:before {
+opacity: 0;
+-webkit-transform: rotate(70deg) scale(0);
+transform: rotate(70deg) scale(0);
+}
+.chat-launcher.active:after {
+opacity: 1;
+-webkit-transform: rotate(0deg);
+transform: rotate(0deg);
+}
+
+.chat-wrapper {
+height: 430px;
+width: 385px;
+display: block;
+border-radius: 5px;
+background: #ebebeb;
+position: fixed;
+right: 20px;
+bottom: 110px;
+z-index: 999;
+box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06), 0 2px 22px rgba(0, 0, 0, 0.16);
+-webkit-transition: transform 400ms ease;
+transition: transform 400ms ease;
+-webkit-transform: translateY(130%);
+transform: translateY(130%);
+}
+.chat-wrapper:before {
+height: 3%;
+padding: 4%;
+font-size: 1.1em;
+line-height: 1em;
+display: block;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+background: #666;
+color: white;
+content: attr(data-headline);
+}
+.chat-wrapper iframe {
+width: 94%;
+height: 84%;
+border: 0;
+border-radius: 5px;
+padding: 3%;
+overflow: hidden;
+}
+.chat-wrapper.is-open {
+-webkit-transform: translateY(0);
+transform: translateY(0);
+}
+
+em {
+    font-weight: bold;
+    font-size: 18px;
+}
