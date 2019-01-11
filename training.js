@@ -1,5 +1,7 @@
 var deasync = require('deasync');
-var dataLayerObj = require('./public/datalayer.js'); // watson feedback visualization by retrieving from database
+var dataLayerObj = require('./public/datalayer.js');
+var trainObj = require('./nlu/rasa/test.js');
+var restart = require('./nlu/rasa/rasa.js');// watson feedback visualization by retrieving from database
 //var axios = require('axios');
 var fs = require('fs');
 
@@ -95,8 +97,6 @@ LuisTraining.prototype = {
                             // }
                             id: j.id;
 
-                            //console.log("params: ",parameters);                                                            
-
                             parameters.push(params);
 
                             //var results = trainBot.trainAfterAdd(parameters);
@@ -104,17 +104,44 @@ LuisTraining.prototype = {
                         }
                     }
                     
-                    console.log("parameters :",parameters);
+                    //console.log("parameters :",parameters);
                     //listId.push(idList);
                     //console.log("Id list that was trained: ",listId);
                     //var results = trainBot.trainAfterAdd(parameters);
+                        
 
-                    //training the bot
-                    //const training_file = path.join(__dirname, 'HRbot\\HR_Bot.json');
-                    //let rawdata = fs.writeFileSync(training_file);
-                    //let trainingData = JSON.parse(rawdata);
-                    //console.log(trainingData);
+                     //Updating the data file
+                    const training_file = path.join(__dirname, 'HRbot', 'HR_Bot.json');
+                    var knowledge_base = JSON.parse(fs.readFileSync(training_file));
+                    var utterances = knowledge_base.rasa_nlu_data.common_examples;
+                    var utterances_text = utterances.map((e) => e.text);
+                    console.log([...utterances_text]);
+                    parameters.forEach(example => {
+                        var update = { text: example.Utterance, intent: example.Intent, entities: example.entityLabels };
+                        //console.log('update.text -->', update.text, '\nutterances_text.includes(update.text) -->', utterances_text.includes(update.text), '\nutterances_text.indexOf(update.text) -->', utterances_text.indexOf(update.text));
+                        //console.log(update.text, 'is', utterances_text.includes(update.text) ? '' : 'not', 'present' );
+                        if (!utterances_text.includes(update.text)) {
+                            utterances_text.push(update.text);
+                            utterances.push(update);
+                        }
+                    });
+                    fs.writeFileSync(training_file, JSON.stringify(knowledge_base));
+
+                    trainObj.train();
                     
+                    
+                    console.log("pid" + process.pid);
+                    const dir = path.join(__dirname, 'models', 'default\\');                 
+                    fs.readdirSync(dir).forEach(file => {
+                        fs.statSync(dir + file).mtime;
+                    });
+                    var rasaModelName = fs.readdirSync(dir).sort(function (a, b) {
+                        return Date.parse(fs.statSync(dir + a).mtime) < Date.parse(fs.statSync(dir + b).mtime);
+                    })[0];
+                    console.log("modelname" + rasaModelName);
+                    //process.kill(process.pid);
+                    //console.log("python -m rasa_nlu.server -c HRbot/config.yml --pre_load default/" + rasaModelName + " --path models/");
+                    //const child = require('child_process').exec('python -m rasa_nlu.server -c HRbot/config.yml --pre_load default/rasaModelName --path models/');
 
                     //console.log(results); 
                     //if (result !== null) {
@@ -127,54 +154,14 @@ LuisTraining.prototype = {
                     //         dataLayerObj.deleteById(database, 'misclassifieds', id.id);
                     //         dataLayerObj.deleteById(database, 'modifiedmisclassifieds', id._id);
                     //     }
-                    //  } 
+                    //  }) 
 
                     // }      
                 }
             }
         }
         return responseData;
-    },
-
-    //addIntents: async function (jsonData) {
-    //    // console.log("jsonData at the add intent");
-    //    // console.log(jsonData);
-    //    // var intentList = [];
-    //    // if (jsonData != null) {
-
-    //    // jsonData.forEach(function(JsonObject) {
-    //    //     console.log("jsonobject at the add intent");
-    //    //     console.log(JsonObject); 
-    //    //      var intent= JsonObject.Intent;          
-    //    //     // "intentName":JsonObject.Intent;
-
-    //    //     intentList.push(intent);
-    //    // });
-    //    // console.log(intentList);
-    //    // var AddIntentResults = null;
-
-    //    // AddIntentResults = await trainBot.createNewIntents(intentList);
-    //    // deasync.loopWhile(function(){return AddIntentResults === null;});     
-
-    //    // console.log("luis_training:addIntents");
-    //    // console.log(AddIntentResults);
-
-    //    // var parameters = [];
-    //    //  jsonData.forEach(function(JsonObject) {
-    //    //     var params = ({
-    //    //        text: JsonObject.Resolution,
-    //    //        intentName: JsonObject.Intent,                             
-    //    //        entityLabels: []   
-    //    //     });   
-    //    //     parameters.push(params);                            
-    //    //  }); 
-    //    // console.log(parameters);           
-    //    var results = await trainBot.addIntentUtteranceAndTrain(jsonData);
-    //    deasync.loopWhile(function () { return results === null; });
-    //    console.log("TrainBot results");
-    //    console.log(results);
-    //    //}             
-    //}
+     }
 };
 
 var luistraining = new LuisTraining();

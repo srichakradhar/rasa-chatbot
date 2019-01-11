@@ -1,0 +1,349 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "intent": "JMP_License_Path",
+        "text": "hello i am new user , wanted to get license for jmp?"
+      },
+      {
+        "intent": "JMP_License_Path",
+        "text": "i need my license for jmp"
+      },
+      {
+        "intent": "JMP_License_Path",
+        "text": "jmp is asking for a license file."
+      },
+      {
+        "intent": "JMP_License_Path",
+        "text": "license"
+      },
+      {
+        "intent": "JMP_License_Path",
+        "text": "licenses needed for my pc to install jmp guides"
+      },
+      {
+        "intent": "JMP_License_Path",
+        "text": "lisence"
+      },
+      {
+        "intent": "JMP_License_Path",
+        "text": "licence"
+      },
+      {
+        "intent": "JMP_License_Path",
+        "text": "liscense"
+      },
+      {
+        "intent": "JMP_License_Path",
+        "text": "where do i find the license?"
+      },
+      {
+        "intent": "JMP_License_Path",
+        "text": "where is the .per file?"
+      },
+      {
+        "intent": "JMP_License_Path",
+        "text": "cannot access the license server with the given path."
+      },
+      {
+        "intent": "RemoteVPNAcess",
+        "text": "I need VPN Acess"
+      },
+      {
+        "intent": "RemoteVPNAcess",
+        "text": "VPN connection"
+      },
+      {
+        "intent": "RemoteVPNAcess",
+        "text": "can i access my pc remotely?"
+      },
+      {
+        "intent": "RemoteVPNAcess",
+        "text": "How can i connect to remote desktop?"
+      },
+      {
+        "intent": "changepassword",
+        "text": "reset my password"
+      },
+      {
+        "intent": "changepassword",
+        "text": "help me in changing password?"
+      },
+      {
+        "intent": "changepassword",
+        "text": "i want to change my password?"
+      },
+      {
+        "intent": "changepassword",
+        "text": "help me in changing password?"
+      },
+      {
+        "intent": "changepassword",
+        "text": "reset my password"
+      },
+      {
+        "intent": "deletePO",
+        "text": "delete RFQ`s/PO`s from CTL"
+      },
+      {
+        "intent": "deletePO",
+        "text": "how do i delete RFQ`s/PO`s from CTL"
+      },
+      {
+        "intent": "deletePO",
+        "text": "Deletion of RFQ`s/PO`s from CTL"
+      },
+      {
+        "intent": "deletePO",
+        "text": "delete RFQ`s from CTL"
+      },
+      {
+        "intent": "deletePO",
+        "text": "delete PO`s from CTL"
+      },
+      {
+        "intent": "goodbye",
+        "text": "goodbye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "see you around"
+      },
+      {
+        "intent": "goodbye",
+        "text": "see you later"
+      },
+      {
+        "intent": "goodbye",
+        "text": "bye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "thanks,bye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "ok,bye"
+      },
+      {
+        "intent": "greet",
+        "text": "hey"
+      },
+      {
+        "intent": "greet",
+        "text": "hello"
+      },
+      {
+        "intent": "greet",
+        "text": "good morning"
+      },
+      {
+        "intent": "greet",
+        "text": "good evening"
+      },
+      {
+        "intent": "greet",
+        "text": "hey there"
+      },
+      {
+        "intent": "greet",
+        "text": "hi"
+      },
+      {
+        "intent": "greet",
+        "text": "hello"
+      },
+      {
+        "intent": "greet",
+        "text": "hello"
+      },
+      {
+        "intent": "help",
+        "text": "help me"
+      },
+      {
+        "intent": "help",
+        "text": "help"
+      },
+      {
+        "intent": "help",
+        "text": "how can you help me?"
+      },
+      {
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 2,
+            "value": "no",
+            "entity": "choice"
+          }
+        ],
+        "text": "no"
+      },
+      {
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 3,
+            "value": "yes",
+            "entity": "choice"
+          }
+        ],
+        "text": "yes"
+      },
+      {
+        "intent": "mistakenlyapproved",
+        "text": "I mistakenly approved it how to undo it?"
+      },
+      {
+        "intent": "mistakenlyapproved",
+        "text": "How to undo the approved request?"
+      },
+      {
+        "intent": "mistakenlyapproved",
+        "text": "mistakenly approved undo it"
+      },
+      {
+        "intent": "requeststatus",
+        "text": "I am unable to track the submitted request from CTL"
+      },
+      {
+        "intent": "requeststatus",
+        "text": "track the submitted request"
+      },
+      {
+        "intent": "requeststatus",
+        "text": "how can i track my submtted request"
+      },
+      {
+        "intent": "thanks",
+        "text": "great"
+      },
+      {
+        "intent": "thanks",
+        "text": "ok,thanks"
+      },
+      {
+        "intent": "thanks",
+        "text": "thanks"
+      },
+      {
+        "intent": "thanks",
+        "text": "thankyou"
+      },
+      {
+        "intent": "userid",
+        "entities": [
+          {
+            "start": 11,
+            "end": 21,
+            "value": "abel.tuter",
+            "entity": "userid"
+          }
+        ],
+        "text": "user id is abel.tuter"
+      },
+      {
+        "intent": "userid",
+        "entities": [
+          {
+            "start": 11,
+            "end": 26,
+            "value": "abraham.lincoln",
+            "entity": "userid"
+          }
+        ],
+        "text": "user id is abraham.lincoln"
+      },
+      {
+        "intent": "userid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 10,
+            "value": "abel.tuter",
+            "entity": "userid"
+          }
+        ],
+        "text": "abel.tuter"
+      },
+      {
+        "intent": "userid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 15,
+            "value": "abraham.lincoln",
+            "entity": "userid"
+          }
+        ],
+        "text": "abraham.lincoln"
+      },
+      {
+        "intent": "userid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "EXIST",
+            "entity": "enabled"
+          }
+        ],
+        "text": "EXIST"
+      },
+      {
+        "intent": "userid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 4,
+            "value": "NULL",
+            "entity": "enabled"
+          }
+        ],
+        "text": "NULL"
+      },
+      {
+        "intent": "userid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 10,
+            "value": "abel.tuter",
+            "entity": "userid"
+          }
+        ],
+        "text": "abel.tuter"
+      },
+      {
+        "intent": "userid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 4,
+            "value": "NULL",
+            "entity": "enabled"
+          }
+        ],
+        "text": "NULL"
+      },
+      {
+        "intent": "userid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 6,
+            "value": "suneel",
+            "entity": "userid"
+          }
+        ],
+        "text": "suneel"
+      }
+    ],
+    "regex_features": [],
+    "lookup_tables": [],
+    "entity_synonyms": []
+  }
+}

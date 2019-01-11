@@ -67,7 +67,7 @@
                 $lastMessage = $('.messages li:last-child').last();
                 if (!$lastMessage.hasClass(_this.message_side)) {
                     var userPicString = _this.message_side == "left" ? "./tcs_chatbot/bot.png" : "./tcs_chatbot/user.png";
-                    $message.find(".avatar").append("<img class='avatarPic' src='" +userPicString +"'>");
+                    $message.find(".avatar").append("<img class='avatarPic' style='width: 36px' src='" +userPicString +"'>");
                 } else {
                     if($lastMessage.hasClass("writing")){
                         $lastMessage.removeClass("writing");
@@ -173,12 +173,30 @@
 
 
         var helpSwitch = document.querySelector('.js-help-switch');
-        var init = new Switchery(helpSwitch);
-        init.setPosition(true);
+        //var init = new Switchery(helpSwitch);
+        //init.setPosition(true);
 
-        var themeSwitch = document.querySelector('.js-theme-switch');
-        var init2 = new Switchery(themeSwitch,  {jackSecondaryColor: '#b1e0f9', secondaryColor: '#fdd5a9', jackColor: '#ded9d9', color: '#5773ff'});
-        init2.setPosition(true);
+        //var themeSwitch = document.querySelector('.js-theme-switch');
+        //var init2 = new Switchery(themeSwitch,  {jackSecondaryColor: '#b1e0f9', secondaryColor: '#fdd5a9', jackColor: '#ded9d9', color: '#5773ff'});
+        //init2.setPosition(true);
+        $(".feedback").each(function () {
+            var feedbackMessage = $(this);
+            console.log("intent...." + feedbackMessage.children().children().find(".intent").text);
+             {
+                //If instead the switch has been set to off we want to first slide everything into the new position
+                //so we first animate the width, then we can show the content and finally we fadeIn the message bubble
+                
+                feedbackMessage.not("#sent").animate({ width: 0 }, 150, function () {
+                    feedbackMessage.find(".intent-info").show(0);
+                    feedbackMessage.not(".empty").animate({ opacity: 1 }, 200);
+                });
+
+                feedbackMessage.filter("#sent").animate({ width: 0 }, 150, function () {
+                    feedbackMessage.find(".intent").show(0);
+                    feedbackMessage.not(".empty").animate({ opacity: 1 }, 200);
+                });
+            }
+        });
 
         helpSwitch.addEventListener('click',function () {
             console.log("Feedback toggle");
@@ -186,37 +204,40 @@
             showHelpTooltip = false;
             $(".feedback").each(function () {
                 var feedbackMessage = $(this);
-                if(!helpSwitch.checked){
-                    //If the switch has been set to off we want to fade out the message
-                    //and only then we can hide the content and reduce the width to slide everything into position
-                    feedbackMessage.not(".empty").not("#sent").animate({opacity: 0}, 50, function(){
-                        feedbackMessage.find(".intent-info").hide(0);
-                        //feedbackMessage.find(".intent").hide(0);
-                        feedbackMessage.animate({width: 0}, 150);  
-                    });  
+                console.log("feedbackmessage" + feedbackMessage);
+                //if(!helpSwitch.checked){
+                //    //If the switch has been set to off we want to fade out the message
+                //    //and only then we can hide the content and reduce the width to slide everything into position
+                //    feedbackMessage.not(".empty").not("#sent").animate({opacity: 0}, 50, function(){
+                //        feedbackMessage.find(".intent-info").hide(0);
+                //        //feedbackMessage.find(".intent").hide(0);
+                //        feedbackMessage.animate({width: 0}, 150);  
+                //    });  
 
-                    feedbackMessage.not(".empty").filter("#sent").animate({opacity: 0}, 50, function(){
-                        feedbackMessage.find(".intent-info").hide(0);
-                        feedbackMessage.find(".intent").hide(0);
-                        feedbackMessage.animate({width: 15}, 150);  
-                    });  
+                //    feedbackMessage.not(".empty").filter("#sent").animate({opacity: 0}, 50, function(){
+                //        feedbackMessage.find(".intent-info").hide(0);
+                //        feedbackMessage.find(".intent").hide(0);
+                //        feedbackMessage.animate({width: 15}, 150);  
+                //    });  
 
-                    //since the empty messages don't animate the opacity, bu they also hide the content (if any) and reduce the size
-                    //we set a timeout which starts exactly after the animation for the non-empty elements and does the same thing
-                    setTimeout(function(){
-                        feedbackMessage.filter(".empty").find(".intent-info").hide(0);
-                        feedbackMessage.filter(".empty").animate({width: 0}, 150);  
-                    }, 50);
-                }
-                else{
+                //    //since the empty messages don't animate the opacity, bu they also hide the content (if any) and reduce the size
+                //    //we set a timeout which starts exactly after the animation for the non-empty elements and does the same thing
+                //    setTimeout(function(){
+                //        feedbackMessage.filter(".empty").find(".intent-info").hide(0);
+                //        feedbackMessage.filter(".empty").animate({width: 0}, 150);  
+                //    }, 50);
+                //}
+                //else
+                {
                     //If instead the switch has been set to off we want to first slide everything into the new position
                     //so we first animate the width, then we can show the content and finally we fadeIn the message bubble
-                    feedbackMessage.not("#sent").animate({width: 250}, 150, function(){
+                    feedbackMessage.not("#sent").animate({ width: 62 }, 150, function () {
+
                         feedbackMessage.find(".intent-info").show(0);
                         feedbackMessage.not(".empty").animate({opacity: 1}, 200);
                     });
 
-                    feedbackMessage.filter("#sent").animate({width: 250}, 150, function(){
+                    feedbackMessage.filter("#sent").animate({width: 62}, 150, function(){
                         feedbackMessage.find(".intent").show(0);
                         feedbackMessage.not(".empty").animate({opacity: 1}, 200);
                     });
@@ -224,17 +245,17 @@
             });
         });
 
-        themeSwitch.addEventListener('click', function () {
-            var messagesContainer = $(".messages");
-            if(messagesContainer.hasClass("theme1")){
-                console.log("Has theme1, switching to theme2");
-                messagesContainer.removeClass("theme1").addClass("theme2");
-            }
-            else if(messagesContainer.hasClass("theme2")){
-                console.log("Has theme2, switching to theme1");
-                messagesContainer.removeClass("theme2").addClass("theme1");
-            }
-        });
+        //themeSwitch.addEventListener('click', function () {
+        //    var messagesContainer = $(".messages");
+        //    if(messagesContainer.hasClass("theme1")){
+        //        console.log("Has theme1, switching to theme2");
+        //        messagesContainer.removeClass("theme1").addClass("theme2");
+        //    }
+        //    else if(messagesContainer.hasClass("theme2")){
+        //        console.log("Has theme2, switching to theme1");
+        //        messagesContainer.removeClass("theme2").addClass("theme1");
+        //    }
+        //});
 
         //Note: the .click() or .on('click') function DOES NOT WORK
         //When an element is dynamically inserted into the DOM, this is because the event handler
@@ -244,7 +265,7 @@
         //then I add another filter on the specific object that has been clicked, in this case is the span with class "feedback_yes"
         $('.messages').on('click', "span.feedback_yes", function () {
             var intent = $(this).parent().parent().find(".intent").text(); //From the yes button I am climbing up the DOM until I am in the form with class "feedback" which contains the a element with the class "intent"
-            var $message = $(this).parent().parent().parent().parent().parent();
+            var $message = $(this).parent().parent().parent().parent();
             var feedback_value = 'yes';
             var replyId = $message.attr("replyId"); //I am climbing up until  I get to the div of the message, with class "message" which has an attribute "replyId"
             //Here I am climbing up until the general container of the messages, from here I have the list of all the messages and I am looking for the one with messageId == replyId, and then I am getting its text
@@ -263,7 +284,7 @@
                 $(this).remove();
                 var newEl = $("<div class='feedback' id='sent'> <a class='intent'>" + intent + "</a> " + check + "</div>");
                 newEl.css('opacity', 0);
-                newEl.css('width', 250);
+                newEl.css('width', 62);
                 newEl.prependTo(wrapperParent).animate({opacity: 1}, 500);
             });
             socket.emit(replyChannel, message, intent, reply, true);
@@ -272,7 +293,7 @@
         $('.messages').on('click', "span.feedback_no", function () {
             var feedback_value = 'no';
             var intent = $(this).parent().parent().find(".intent").text(); //From the yes button I am climbing up the DOM until I am in the form with class "feedback" which contains the a element with the class "intent"
-            var $message = $(this).parent().parent().parent().parent().parent();
+            var $message = $(this).parent().parent().parent().parent();
             var replyId = $message.attr("replyId"); //I am climbing up until  I get to the div of the message, with class "message" which has an attribute "replyId"
             //Here I am climbing up until the general container of the messages, from here I have the list of all the messages and I am looking for the one with messageId == replyId, and then I am getting its text
             var message = $(this).parent().parent().parent().parent().parent().parent().find(".message[messageId='" + replyId + "']").find(".text").text();
@@ -285,13 +306,15 @@
             /*$messages.animate({
                 scrollTop: $message.prop('scrollHeight')
             }, 100);*/
-            wrapper.animate({  opacity: 0 }, 200, function () {
-                $(this).remove();
-                var newEl = $("<div class='feedback' id='sent'> <a class='intent'>" + intent + "</a> " + check + "</div>");
-                newEl.css('opacity', 0);
-                newEl.css('width', 250);
-                newEl.prependTo(wrapperParent).animate({opacity: 1}, 500);
-            });
+            
+                wrapper.animate({ opacity: 0 }, 200, function () {
+                    $(this).remove();
+
+                    var newEl = $("<div class='feedback' id='sent'> " + check + "</div>");
+                    newEl.css('opacity', 0);
+                    newEl.css('width', 62);
+                    newEl.prependTo(wrapperParent).animate({ opacity: 1 }, 500);
+                });
             socket.emit(replyChannel, message, intent, reply, false);
         });
 

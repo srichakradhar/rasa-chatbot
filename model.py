@@ -34,3 +34,33 @@ sys.stdout.flush()
 #for i in sorted(alist.items(), key=operator.itemgetter(1)):
 #    latest="%s" % ( i[0])
 #print ("newest directory is ", latest)
+
+
+### JMP license installation 1
+#* greet
+#  - utter_greet
+#  -utter_servicenowrequest
+#* JMP_License_Path
+#  - utter_servicenowrequest
+# * inform{"choice":no}
+#  -  utter_goodbye
+
+### JMP license installation 2
+#* JMP_License_Path
+#  - utter_servicenowrequest
+#* inform{"choice": yes}
+#  - utter_operatingsystem
+#* inform{"os":["windows 10","windows 7"]}
+#  - utter_windows
+#* goodbye
+#  - utter_goodbye
+
+### JMP license installation 3
+#* JMP_License_Path
+#  - utter_servicenowrequest
+#* inform{"choice": yes}
+#  - utter_operatingsystem
+#* inform{"os": "mac os"}
+#  - utter_macos
+#* goodbye
+#  - utter_goodbye

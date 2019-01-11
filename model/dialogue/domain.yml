@@ -1,0 +1,158 @@
+%YAML 1.1
+---
+actions:
+- utter_description
+- utter_thanks
+- utter_relaunch
+- utter_goodbye
+- utter_connectvpn
+- utter_on_it
+- action_description
+- utter_greet
+- utter_status
+- utter_servicenowrequest
+- action_isenabled
+- utter_macos
+- utter_userid
+- utter_raise_servicenow_ticket
+- utter_help
+- utter_windows
+- utter_resetpassword
+- utter_usage
+- utter_taskmistaken
+- utter_response
+- utter_requests
+- utter_vpnstatus
+- utter_deletePO
+- utter_contact
+- utter_suneel
+config:
+  store_entities_as_slots: true
+entities:
+- cuisine
+- userid
+- choice
+- enabled
+- status
+- description
+- operatingsystem
+forms: []
+intents:
+- goodbye:
+    use_entities: true
+- thanks:
+    use_entities: true
+- greet:
+    use_entities: true
+- mistakenlyapproved:
+    use_entities: true
+- JMP_License_Path:
+    use_entities: true
+- RemoteVPNAcess:
+    use_entities: true
+- inform:
+    use_entities: true
+- changepassword:
+    use_entities: true
+- userid:
+    use_entities: true
+- help:
+    use_entities: true
+- requeststatus:
+    use_entities: true
+- deletePO:
+    use_entities: true
+slots:
+  choice:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.BooleanSlot
+  cuisine:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  description:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  enabled:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.CategoricalSlot
+    values:
+    - exist
+    - none
+  matches:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.UnfeaturizedSlot
+  operatingsystem:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.CategoricalSlot
+    values:
+    - windows 10
+    - windows 7
+    - mac os
+  status:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  userid:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+templates:
+  utter_connectvpn:
+  - text: connect to VPN then relaunch the application and confirm  with yes if worked
+  utter_contact:
+  - text: please contact key user Alex de Kruijff on this
+  utter_deletePO:
+  - text: Sure,Can you please let me know if you ever have contacted RFQ/PO workflow
+      Key user on this?yes/no
+  utter_description:
+  - text: please provide the description and id
+  utter_goodbye:
+  - text: goodbye :(
+  - text: Bye-bye
+  utter_greet:
+  - text: Hi , how can i help you?
+  - text: Hey! i can help you with queires regarding JMP License?
+  - text: Hi i can help you with qeires regarding remote vpn acess
+  utter_help:
+  - text: Thanks for contacting Virtual assistant ,  how can I help you further?
+  utter_macos:
+  - text: Mac OS is not supported by remote support.please raise a incident
+  utter_on_it:
+  - text: I'm on it
+  utter_raise_servicenow_ticket:
+  - text: Shall i raise a servicenow ticket?
+  utter_relaunch:
+  - text: Relaunch the application and confirm  with yes if worked
+  utter_requests:
+  - text: Click on My Request/ WorkFlows/Reports tab and there you can track the requests
+  utter_resetpassword:
+  - text: System Administrator will send you an email with temporary password  after
+      that you can reset the password your self
+  utter_response:
+  - text: Your profile is not enabled in the system , please contact  System administrator
+  utter_servicenowrequest:
+  - text: please provide the operating system
+  utter_status:
+  - text: provide status
+  utter_suneel:
+  - text: hi,suneel...
+  utter_taskmistaken:
+  - text: The approved task cannot be retrived back,i am sorry, you have to please
+      contact the key user Yvonne Kox/Koen Rutjens or drop a mail to AP-Workflow@asml.com
+  utter_thanks:
+  - text: Thanks,Have a wonderful day
+  utter_usage:
+  - text: Sure,Can you please let me know if you have accessed the Reports/workFlows
+      tab in CTL before?yes/no
+  utter_userid:
+  - text: what is your userid?
+  utter_vpnstatus:
+  - text: please provide the status of your connection
+  utter_windows:
+  - text: please raise a request in servicenow

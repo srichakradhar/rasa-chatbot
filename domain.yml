@@ -1,0 +1,127 @@
+%YAML 1.1
+---
+actions:
+- utter_usage
+- action_description
+- utter_help
+- utter_vpnstatus
+- utter_requests
+- utter_greet
+- utter_on_it
+- utter_macos
+- utter_relaunch
+- utter_userid
+- utter_status
+- utter_windows
+- utter_thanks
+- action_isenabled
+- utter_servicenowrequest
+- utter_taskmistaken
+- utter_goodbye
+- utter_contact
+- utter_response
+- utter_raise_servicenow_ticket
+- utter_description
+- utter_deletePO
+- utter_connectvpn
+- utter_resetpassword
+- utter_suneel
+entities:
+- status
+- userid
+- enabled
+- choice
+- cuisine
+- description
+- operatingsystem
+intents:
+- goodbye
+- userid
+- changepassword
+- thanks
+- greet
+- mistakenlyapproved
+- JMP_License_Path
+- RemoteVPNAcess
+- inform
+- help
+- requeststatus
+- deletePO
+slots:
+  choice:
+    type: bool
+  cuisine:
+    type: text
+  description:
+    type: text
+  enabled:
+    type: categorical
+    values:
+    - exist
+    - none
+  matches:
+    type: unfeaturized
+  operatingsystem:
+    type: categorical
+    values:
+    - windows 10
+    - windows 7
+    - mac os
+  status:
+    type: text
+  userid:
+    type: text
+templates:
+  utter_connectvpn:
+  - text: connect to VPN then relaunch the application and confirm  with yes if worked
+  utter_contact:
+  - text: please contact key user Alex de Kruijff on this
+  utter_deletePO:
+  - text: Sure,Can you please let me know if you ever have contacted RFQ/PO workflow
+      Key user on this?yes/no
+  utter_description:
+  - text: please provide the description and id
+  utter_goodbye:
+  - text: goodbye :(
+  - text: Bye-bye
+  utter_greet:
+  - text: Hi , how can i help you?
+  - text: Hey! i can help you with queires regarding JMP License?
+  - text: Hi i can help you with qeires regarding remote vpn acess
+  utter_help:
+  - text: Thanks for contacting Virtual assistant ,  how can I help you further?
+  utter_macos:
+  - text: Mac OS is not supported by remote support.please raise a incident
+  utter_on_it:
+  - text: I'm on it
+  utter_raise_servicenow_ticket:
+  - text: Shall i raise a servicenow ticket?
+  utter_relaunch:
+  - text: Relaunch the application and confirm  with yes if worked
+  utter_requests:
+  - text: Click on My Request/ WorkFlows/Reports tab and there you can track the requests
+  utter_resetpassword:
+  - text: System Administrator will send you an email with temporary password  after
+      that you can reset the password your self
+  utter_response:
+  - text: Your profile is not enabled in the system , please contact  System administrator
+  utter_servicenowrequest:
+  - text: please provide the operating system
+  utter_status:
+  - text: provide status
+  utter_suneel:
+  - text: hi,suneel...
+  utter_taskmistaken:
+  - text: The approved task cannot be retrived back,i am sorry, you have to please
+      contact the key user Yvonne Kox/Koen Rutjens or drop a mail to AP-Workflow@asml.com
+  utter_thanks:
+  - text: Thanks,Have a wonderful day
+  utter_usage:
+  - text: Sure,Can you please let me know if you have accessed the Reports/workFlows
+      tab in CTL before?yes/no
+  utter_userid:
+  - text: what is your userid?
+  utter_vpnstatus:
+  - text: please provide the status of your connection
+  utter_windows:
+  - text: please raise a request in servicenow

@@ -25,7 +25,7 @@ body {
   position: absolute;
   /*width: calc(100% - 20px);*/
   /*max-width: 800px;*/
-  width: 50%;
+  width: 42%;
   height: 70%;
   border-radius: 10px;
   background-color: black;
@@ -40,9 +40,9 @@ body {
 }
 .v1 {
     border-left: 0.5px solid white;
-    height: 70px;
+    height: 71px;
     position: absolute;
-    left: 92%;
+    right:10%;
     top: 0;
 }
 .top_menu {
@@ -88,14 +88,13 @@ body {
         background-color: white;
         color: cornflowerblue;
         font-weight: bold;*/
-
-
         text-align: center;
         color:white;
-        font-size: 24px;
+        font-size: 20px;
         display: inline-block;
         width: 35%;
         vertical-align: top;
+        font-weight:bold;
     }
 
 
@@ -120,7 +119,7 @@ body {
         margin-bottom: 3.5px;
         transition: all 0.2s linear;
         opacity: 0;
-        background-color:gold;
+        
     }
 
 #wrapper.empty {
@@ -129,14 +128,17 @@ body {
 
 #wrapper.feedback{
   /*width: 250px;*/
-  padding: 2px 8px 2px 8px;
+  padding: 2px 0px;
   /*transition: width cubic-bezier(0.65, 0.05, 0.36, 1) 0.2s;*/
 }
 
-.left #wrapper.feedback, .left  #dummy, .left  #sent.feedback{
-  float: left;
+.left #wrapper.feedback, .left #dummy, .left #sent.feedback {
+    /*float: left;
   margin-left: 0px;
-  margin-right: 20px;
+  margin-right: 20px;*/
+    /*float: right;*/
+    margin-left: 0px;
+    margin-right: 253px;
 }
 
 .right #wrapper.feedback, .right  #dummy, .right  #sent.feedback{
@@ -146,7 +148,7 @@ body {
 }
 
 .left #wrapper.feedback {
-    background-color: white;
+    /*background-color: white;*/
 }
 .right #wrapper.feedback{
   background-color: white;
@@ -216,7 +218,8 @@ body {
 
 .feedback-btn-container{
   display: inline;
-  float: right;
+ 
+  
 }
 
 /* LEFT message */
@@ -227,14 +230,14 @@ body {
 
 .messages .message.left .text_wrapper {
     /*margin-left: 20px;*/
-    margin-top: 7px;
-    margin-left:-8px;
+    margin-top: 2px;
+    margin-left:0px;
     float: left;
     background-color: #eceff1;
     color: #000000;
     border-radius: 10px;
     box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
-    padding: 8px;
+    padding: 6px;
     word-break: break-word;
     white-space:nowrap;
 }
@@ -290,7 +293,7 @@ body {
   margin-top: 0.6%;
 }
 .messages .message.right .text_wrapper {
-  margin-right: 20px;
+  margin-right: 5px;
   margin-top: 4px;
   float: right;
 }
@@ -304,7 +307,8 @@ body {
   background-color: #c7eafc;
 }
 .messages.theme1 .message.right .text_wrapper {
-    background-color: #2d6de2;
+    
+    background-color: steelblue;
     border-radius: 10px;
     box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
     padding: 8px;
@@ -393,7 +397,7 @@ body {
 }*/
 
 .messages .message .text_wrapper .text {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 300;
     white-space: pre-wrap;
     /*white-space: -moz-pre-wrap; */
@@ -412,7 +416,7 @@ body {
     left: 0;
     position: absolute;
     right: 0;
-    width: 605px;
+    width: 538px;
     /* position: relative;
     width: 100%;
     height: 10%;
@@ -447,7 +451,7 @@ body {
         height: 85%;
         border-radius: 25px;
         border: 1px solid #bcbdc0;
-        width: 85%;
+        width: 82%;
         position: relative;
         padding: 0 20px;
         background-color:transparent;
@@ -495,7 +499,7 @@ body {
     width: 96%;
     padding: 0;
     outline: none;
-    font-size: 15px;
+    font-size: 16px;
 }
 .bottom_wrapper .wc-send {
     background-color: transparent;
@@ -544,7 +548,7 @@ body {
 .avatarPic {
   display: block;
   z-index: 200;
- margin-left:-44%;
+ /*margin-left:-44%;*/
  margin-top:9px;
 }
 
@@ -587,7 +591,7 @@ body {
   float: right;
   color: rgba(0, 0, 0, 0.45);
   /* vertical-align: BOTTOM; */
-  font-size: 10px;
+  font-size: 11px;
   font-family: "Roboto", sans-serif;
   height: 11px;
   margin-right: 2px;
@@ -597,11 +601,11 @@ body {
 }
 
 .messages.theme1 .left .message-time {
-  color: rgba(0, 0, 0, 0.45);
+  color: rgb(0, 0, 0);
 }
 
 .messages.theme1 .right .message-time{
-  color: rgba(0, 0, 0, 0.45);
+  color:white;
 }
 
 .messages.theme2 .left .message-time {
@@ -630,6 +634,8 @@ body {
 }
 
 .switchery{
+    top:-36px;
+    left:55%;
   margin-left: 10px;
   width: 62px !important;
 }

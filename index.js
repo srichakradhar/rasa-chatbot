@@ -12,6 +12,8 @@ const bodyParser = require('body-parser');
 var trainingObj = require('./training.js');
 db_url = "mongodb://localhost:27017/botdb";
 
+
+
 //start the server
 //const child = require('child_process').exec('python -m rasa_nlu.server -c HRbot/config.yml --pre_load default/model_20181015-155713 --path models/');
 
@@ -56,7 +58,7 @@ io.on('connection', function (socket) {
   socket.on(replyChannel, function(message, intent, reply, feedback){
       console.log("Message: " + message + " | Intent: " + intent + " | Feedback: " + feedback);
       let response;
-      MongoClient.connect(db_url, function (err, db) {
+      MongoClient.connect(db_url, { useNewUrlParser: true }, function (err, db) {
           if (err) throw err;
           var dbo = db.db("botdb");
           console.log("connected");
@@ -67,6 +69,7 @@ io.on('connection', function (socket) {
               "output": reply,
               "timestamp": new Date()
           };
+          console.log(feedback_obj);
           
           if (feedback_obj.feedback == true) {
               dbo.collection("classifieds").insertOne(feedback_obj, function (err, inserted) {
@@ -89,7 +92,7 @@ io.on('connection', function (socket) {
 });
 
 var port = 8005;
-
+ 
 server.listen(port,function () {
   console.log('Chatbot is listening on port ' + port + '!')
 });

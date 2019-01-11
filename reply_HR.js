@@ -7,13 +7,16 @@ const REPLY_DID_NOT_UNDERSTAND = "I didn't understand that. Can you rephrase?";
 const REPLY_SUCCESSFUL = "I understood your message. You can tailor my responses to your messages by analysing the metadata attached with this message.";
 db_url = "mongodb://localhost:27017/botdb";
 
-
 function Reply(message, intent, entities) {
+    
     this.message = message;
-    this.reply = this.getReply(intent, entities);
+    
+    this.reply = this.getReply(message,intent, entities);
     this.intent = intent;
     this.entities = entities;
     this.context = "global";
+   
+  
 }
 
 Reply.prototype.toJson = function () {
@@ -22,26 +25,28 @@ Reply.prototype.toJson = function () {
     json['entities'] = this.entities;
     json['reply'] = this.reply;
     json['message'] = this.message;
+  
     return json;
 };
 
-Reply.prototype.getReply = function (intent, entities) {
-    
-    if (intent.name == null) {
-
+Reply.prototype.getReply = function (message,intent, entities) {
+   
+    if (intent.name == "Unclassified") {
+        
         
         let response;
         MongoClient.connect(db_url, function (err, db) {
             if (err) throw err;
             var dbo = db.db("botdb");
             console.log("connected inside unclassified block");
+            
             feedback_obj = {
-               // "feedback": feedback,
-                "input": this.message,
+                // "feedback": feedback,
+                "input": message,
                 "intent": "None",
               //  "answer": reply
             };
-
+            console.log("feedobj"+feedback_obj.intent, feedback_obj.input);
           
                 dbo.collection("unclassifieds").insertOne(feedback_obj, function (err, inserted) {
                     if (err) throw err;
@@ -57,7 +62,7 @@ Reply.prototype.getReply = function (intent, entities) {
     else {
         switch (intent.name) {
             case "init1": return "Hello there!";
-            case "init2": return " Hi i am the HR chatbot! how may i help you?";
+            case "init2": return " Hi , I am HR Virtual Assistant , how can I help you?";
             case "VMV": return "The Vision, Mission and Values statements describe who we are as a company and how we operate.  Bookmark them in your browser by clicking here:" + "link".link("http://insideapplied/vmv/Pages/Home.aspx");
             case "thank you note": return "You can send thank you notes to coworkers via A3. See link below." + "link".link("https://appliedapps.amat.com/sites/A3/SitePages/Default.aspx");
             case "internal posting": return "You can view job postings in our Jobs@Applied page. See link below." + "link".link("http://atm/workingatapplied/staffing/apply/Pages/default.aspx");
@@ -69,16 +74,16 @@ Reply.prototype.getReply = function (intent, entities) {
             case "map": return "You can access campus maps using the link below." + "link".link("http://spapp/sites/usa/SCLAFacilities/SitePages/drawing.aspx");
             case "Employee referral": return "Here’s a country-by-country process:" + "link".link("http://atm/workingatapplied/staffing/referral/Pages/default.aspx");
             case "calendar": return "Archived, current and future calendars can be found here:" + "link".link("http://acn/sites/gis/ccc/appsupportweb/FiscalCalendarResources/Forms/AllItems.aspx");
-            //case "Benefits": return "For benefits related issues or questions please contact Mercer Benefits Service Center (800-921-0205). If needed, please follow-up with your HR Business Partner.";
-            case "Employee Appraisal": return "";
-            case "HIS Plan": return "";
-            case "Number of leaves": return "";
-            case "Variable Pay": return "";
+            case "Benefits": return "For benefits related issues or questions please contact Mercer Benefits Service Center (800-921-0205). If needed, please follow-up with your HR Business Partner.";
+            case "Employee Appraisal": return "There is a different process available";
+            case "HIS Plan": return "Please find the plan details from HIS Portal > Plans > Bronze";
+            case "Number of leaves": return "For earned leaves-4/quarter sick leaves-2.5/quarter casual leaves-1.5/quarter";
+            case "Variable Pay": return "Under progress";
             case "Leave Encashment": return "Under progress";
-            case "Business Cards": return "";
+            case "Business Cards": return "Under progress";
             case "Greeting": return "Hi";
             case "Help": return "I'm Hiro. I can help you with HR queries.";
-            case "Cancel": return "";
+            case "Cancel": return "Under progress";
             case "Leave of absence": return "LOA requests need to be submitted thru Sedgwick (800-495-2311). Please review all resources relating to LOAs using the link below." + "link".link(" https://microsite.ehr.com/usa-amp-wellness/time-off-and-perks/time-away/leave-of-absence");
             case "AMP Wellness Center": return "In order to get access to the AMP Wellness Centers, you will need to complete the application form (link below) and submit it to the wellness center." + "link".link(" https://microsite.ehr.com/Portals/110/Documents/AMP-Fitness-Application-SCLA.pdf");
             case "conference": return "You can locate conference rooms, offices and people using the IBM Tririga Find Space web-app." + "link".link(" https://amatfc.dcacloud.com/prod/html/en/default/platform/mainpage/mainpage.jsp");
@@ -99,6 +104,7 @@ Reply.prototype.getReply = function (intent, entities) {
             case "Thank You": return "Pleasure talking to you. Goodbye!";
             
             default:
+                let response;
                 try {
                     //var db = await MongoClient.connect(db_url, { useNewUrlParser: true });
                     //var dbo = db.db("botdb");
@@ -110,8 +116,8 @@ Reply.prototype.getReply = function (intent, entities) {
                     //    console.log("result" + result[0].answer);
                     //    db.close;
                     //});
-                    let response;
-                    MongoClient.connect(db_url, function (err, db) {
+                    
+                    MongoClient.connect(db_url, { useNewUrlParser: true }, function (err, db) {
                         if (err) throw err;
                         var dbo = db.db("botdb");
                         console.log("connected in default");
